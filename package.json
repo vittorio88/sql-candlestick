@@ -1,0 +1,21 @@
+{
+  "name": "sql-candlestick",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Pure JS with SQL.JS and Echarts",
+ "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "scripts": {
+    "start": "http-server ./ -p 8080"
+  },
+  "devDependencies": {
+    "echarts": "^5.3.2",
+    "http-server": "^0.13.0",
+    "sql.js": "^1.6.2"
+  },
+  "dependencies": {
+    "echarts": "^5.3.2",
+    "sql.js": "^1.6.2"
+  }
+}

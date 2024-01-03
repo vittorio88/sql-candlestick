@@ -1,0 +1,68 @@
+(base) vitto@vitto-mbair1 backtest-tool % sqlite3 Financial_data.db 
+SQLite version 3.41.2 2023-03-22 11:56:21
+Enter ".help" for usage hints.
+sqlite> .tables
+asset_returns_AAPL  asset_returns_MSFT  price_data_GOOG   
+asset_returns_GOOG  price_data_AAPL     price_data_MSFT   
+sqlite> .schema *
+CREATE TABLE IF NOT EXISTS "price_data_AAPL" (
+"Date" TIMESTAMP,
+  "Open" REAL,
+  "High" REAL,
+  "Low" REAL,
+  "Close" REAL,
+  "Adj Close" REAL,
+  "Volume" INTEGER
+);
+CREATE INDEX "ix_price_data_AAPL_Date"ON "price_data_AAPL" ("Date");
+CREATE TABLE IF NOT EXISTS "asset_returns_AAPL" (
+"Date" TEXT,
+  "Open" REAL,
+  "High" REAL,
+  "Low" REAL,
+  "Close" REAL,
+  "Adj Close" REAL,
+  "Volume" INTEGER,
+  "Rendimento Percentuale" REAL
+);
+CREATE TABLE IF NOT EXISTS "price_data_MSFT" (
+"Date" TIMESTAMP,
+  "Open" REAL,
+  "High" REAL,
+  "Low" REAL,
+  "Close" REAL,
+  "Adj Close" REAL,
+  "Volume" INTEGER
+);
+CREATE INDEX "ix_price_data_MSFT_Date"ON "price_data_MSFT" ("Date");
+CREATE TABLE IF NOT EXISTS "asset_returns_MSFT" (
+"Date" TEXT,
+  "Open" REAL,
+  "High" REAL,
+  "Low" REAL,
+  "Close" REAL,
+  "Adj Close" REAL,
+  "Volume" INTEGER,
+  "Rendimento Percentuale" REAL
+);
+CREATE TABLE IF NOT EXISTS "price_data_GOOG" (
+"Date" TIMESTAMP,
+  "Open" REAL,
+  "High" REAL,
+  "Low" REAL,
+  "Close" REAL,
+  "Adj Close" REAL,
+  "Volume" INTEGER
+);
+CREATE INDEX "ix_price_data_GOOG_Date"ON "price_data_GOOG" ("Date");
+CREATE TABLE IF NOT EXISTS "asset_returns_GOOG" (
+"Date" TEXT,
+  "Open" REAL,
+  "High" REAL,
+  "Low" REAL,
+  "Close" REAL,
+  "Adj Close" REAL,
+  "Volume" INTEGER,
+  "Rendimento Percentuale" REAL
+);
+

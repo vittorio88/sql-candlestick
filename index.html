@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="./public/favicon.png" />
+    <link rel="stylesheet" type="text/css" href="./src/sql-candlestick.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript + SQL.JS + APACHE ECHARTS</title>
+    <script type="importmap">
+      {
+        "imports": {
+          "echarts": "/node_modules/echarts/dist/echarts.esm.js"        }
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Javascript + SQL.JS + APACHE ECHARTS</h1>
+    <div style="height: 600px; width: 800px; " id="echart-candlestick"></div>
+    <script type="module" src="./src/sql-candlestick.js"></script>
+	
+  </body>
+</html>
