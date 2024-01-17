@@ -21,12 +21,16 @@ function splitData(dataObject) {
     for (let i = 0; i < rawData.length; i++) {
         let onetimestamp = rawData[i][0].split(' ')[0];  // The date is the first element
         let open = rawData[i][1];  // The 'Open' value
+        let high = rawData[i][2];  // The 'High' value
+        let low = rawData[i][3];  // The 'Low' value
         let close = rawData[i][4];  // The 'Close' value
-        let adjClose = rawData[i][5];  // The 'Adj Close' value
-        let volume = rawData[i][6];  // The 'Volume' value
+        let volume = rawData[i][5];  // The 'Volume' value
 
         categoryData.push(onetimestamp);  // Add the date to categoryData
-        values.push([open, rawData[i][2], rawData[i][3], close, adjClose]);  // Add the price points to values
+        values.push([open, high, low, close]);  // Add the price points to values
+        volumes.push([i, volume, open > close ? 1 : -1]);  // Add the volume information to volumes
+    }
+
         volumes.push([i, volume, open > close ? 1 : -1]);  // Add the volume information to volumes
     }
     
