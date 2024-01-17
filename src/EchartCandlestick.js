@@ -29,7 +29,7 @@ function splitData(dataObject) {
         categoryData.push(onetimestamp);  // Add the date to categoryData
         values.push([open, high, low, close]);  // Add the price points to values
         volumes.push([i, volume, open > close ? 1 : -1]);  // Add the volume information to volumes
-    }
+    
 
         volumes.push([i, volume, open > close ? 1 : -1]);  // Add the volume information to volumes
     }
