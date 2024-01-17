@@ -1,0 +1,11 @@
+
+
+
+CREATE TABLE price_data_ccxt_binance_BNBUSD_1d (
+    timestamp TIMESTAMP PRIMARY KEY,
+    open      REAL,
+    high      REAL,
+    low       REAL,
+    close     REAL,
+    volume    REAL
+);
