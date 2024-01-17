@@ -1,7 +1,7 @@
 import * as databaseUtils from './databaseUtils.js';
 import * as EchartCandlestick from './EchartCandlestick.js';
 const PathToSqlJsWorker = "../node_modules/sql.js/dist/worker.sql-wasm.js";
-const localDbFilePath = '../data/yfinance_data.sqlite3';
+const localDbFilePath = '../data/crypto_price_data.sqlite3';
 const sqlQuery = "SELECT timestamp AS 'Date', open AS 'Open', high AS 'High', low AS 'Low', close AS 'Close', volume AS 'Volume' FROM price_data_ccxt_binance_BNBUSD_1d LIMIT 20"; // Select only the top 20 rows
 
 
