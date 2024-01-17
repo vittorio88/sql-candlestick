@@ -2,7 +2,7 @@ import * as databaseUtils from './databaseUtils.js';
 import * as EchartCandlestick from './EchartCandlestick.js';
 const PathToSqlJsWorker = "../node_modules/sql.js/dist/worker.sql-wasm.js";
 const localDbFilePath = '../data/yfinance_data.sqlite3';
-const sqlQuery = "SELECT * FROM price_data_AAPL LIMIT 20"; // Select only the top 20 rows
+const sqlQuery = "SELECT timestamp AS 'Date', open AS 'Open', high AS 'High', low AS 'Low', close AS 'Close', volume AS 'Volume' FROM price_data_ccxt_binance_BNBUSD_1d LIMIT 20"; // Select only the top 20 rows
 
 
 function sleep(ms) {
@@ -12,7 +12,7 @@ function sleep(ms) {
 function handleDatabaseResults(results) {
   console.log("database results are: ")
   console.log(results)
-  createTable(results); 
+  createTable(results);
   EchartCandlestick.updateResults(results);
   
 }
@@ -58,4 +58,3 @@ databaseUtils.pollDatabaseStatus(50, 10)  // Poll every 1000ms, up to 10 times
     .catch(error => {
         console.error("Error waiting for the database:", error);
     });
-
